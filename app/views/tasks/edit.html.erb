@@ -1,0 +1,12 @@
+<h1>Edição de Tarefa</h1>
+
+<%= bootstrap_form_for(@task) do |t| %>
+  <%= t.text_field :title, label: "Titulo" %>
+  <%= t.text_area :description, label: "Descrição"  %>
+  <%= t.check_box :done, label: "Concluido?"  %>
+  <%= t.submit "Salvar", class: "btn btn-success" %>
+  <%= link_to 'Ver', @task , class: "btn btn-success"%> 
+  <%= link_to 'Voltar', '/' , class: "btn btn-success" %>
+<% end %>
+
+

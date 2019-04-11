@@ -1,0 +1,8 @@
+<h1>Nova Tarefa</h1>
+
+<%= bootstrap_form_for(@task) do |t| %>
+  <%= t.text_field :title, label: "Titulo" %>
+  <%= t.text_area :description, label: "Descrição"  %>
+  <%= t.check_box :done, label: "Concluido?"  %>
+  <%= t.submit "Criar", class: "btn btn-success" %>
+<% end %>

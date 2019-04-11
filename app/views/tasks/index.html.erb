@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @title %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Titulo</th>
+      <th colspan="5">Descrição</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.title %></td>
+        <td colspan="5"><%= task.description %></td>
+        <td style="width: 200px;">
+          <div style="width: 200px;">
+            <%= link_to 'Ver', task, class: "btn btn-success"  %>
+            <%= link_to 'Editar', edit_task_path(task), class: "btn btn-success"  %>
+            <%= link_to 'Excluir', task, class: "btn btn-success" , method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nova Tarefa', new_task_path, class: "btn btn-primary" %>
